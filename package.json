@@ -1,0 +1,19 @@
+{
+  "name": "faucet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "get-eth-wallet-address": "node -r dotenv/config ./scripts/getEthWalletAddress.js",
+    "create-eth-account": "./scripts/create-eth-account.sh",
+    "init-genesis": "./scripts/init-genesis.sh",
+    "start-node": "set -o allexport && source .env && set +o allexport && ./scripts/start-node.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "ethers": "^6.6.0"
+  }
+}
