@@ -1,36 +1,52 @@
 # Faucet
 
-## Como empezar el proyecto
+## How to set up the project
 
-### Iniciar Nodo
+First run:
+```
+npm install 
+```
 
-Corre en la consola: 
+### Setting up Ethereum Node
+
+> You need to have Docker installed and running in order to follow this steps.
+
+Run in your terminal: 
 
 ```
 npm run create-eth-account
 ```
+It is going to ask you for a password, **remember** this password and add it you the `.env`file into the `WALLET_PASSWORD` value. Also, a file inside `data/keystore` should have been created, copy the relative path of the file as the `DATA_PATH` env value.
 
-Te va a pedir que ingreses una contraseña, recuerda esta contraseña y agregala a un archivo `.env` con el valor de `WALLET_PASSWORD`, También se te debería haber creado un archivo dentro de `data/keystore` agrega el relative path de este archivo en el valor `DATA_PATH` de env.
-
-Ahora necesitas saber el address de la wallet para eso ejecuta el script: 
+Now, you need to know the wallet address, for that we are going to run:  
 
 ```
 npm run get-eth-wallet-address
 ```
 
-Y agrega el valor del Wallet al archivo `.env` con el valor de `WALLET_ADDRESS`.
+Add the wallet address value to the `.env` file in the variable `WALLET_ADDRESS`. Also, use this value to replace the key inside of the `alloc` object in `eth-node/genesis.json`.
 
-Incluye tambien este address como key del `alloc` en `genesis.json`
-
-Ahora corre:
+Now run:
 
 ```
 npm run init-genesis
 ```
 
-y finalmente:
-
+and finally:
 
 ```
 npm run start-node
 ```
+
+## Running server
+
+```
+npm run start-server
+```
+
+## Running FrontEnd
+
+```
+npm start-react
+```
+ 

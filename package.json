@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "get-eth-wallet-address": "node -r dotenv/config ./scripts/getEthWalletAddress.js",
-    "create-eth-account": "./scripts/create-eth-account.sh",
-    "init-genesis": "./scripts/init-genesis.sh",
-    "start-node": "set -o allexport && source .env && set +o allexport && ./scripts/start-node.sh"
+    "get-eth-wallet-address": "node -r dotenv/config ./eth-node/scripts/getEthWalletAddress.js",
+    "create-eth-account": "./eth-node/scripts/create-eth-account.sh",
+    "init-genesis": "./eth-node/scripts/init-genesis.sh",
+    "start-node": "set -o allexport && source .env && set +o allexport && ./eth-node/scripts/start-node.sh",
+    "start-server": "nodemon -r dotenv/config server/app.js",
+    "start-front": "cd ./front && yarn dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.1.4",
-    "ethers": "^6.6.0"
+    "ethers": "^6.6.0",
+    "express": "^4.18.2",
+    "web3": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "nodemon": "^2.0.22"
   }
 }
