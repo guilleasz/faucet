@@ -46,7 +46,21 @@ npm run start-server
 
 ## Running FrontEnd
 
+To install packages:
 ```
-npm start-react
+cd front
+yarn
+```
+
+To run app you can either run it inside `front` directory: 
+
+```
+yarn dev
+```
+
+or in the project directory: 
+
+```
+npm start-front
 ```
  
